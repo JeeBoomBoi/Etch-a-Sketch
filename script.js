@@ -31,10 +31,19 @@ scale.onchange = function() {
     setupGrid(size);
 }
 
+function randomColorGenerator() {
+    const colorList = []
+    for (let i = 0; i < 3; i++) {
+        colorList.push(Math.floor(Math.random() * 255))
+    }
+    return colorList
+}
+
 function changeColor(e) {
     if (e.type == "mouseover" && !mouseDown) return;
     const gridElement = e.target;
-    gridElement.style.backgroundColor = "black";
+    const colorList = randomColorGenerator()
+    gridElement.style.backgroundColor = 'rgb(' + colorList.join(',') + ')';
 }
 
 window.onload = () => {

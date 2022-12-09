@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 const scale = document.getElementById("scale");
+const clearBtn = document.querySelector('.clear-btn');
 
 // neat trick from michalosman
 let mouseDown = false;
@@ -18,6 +19,11 @@ function setupGrid(size) {
         gridContainer.appendChild(gridElement)
     }
 }
+
+clearBtn.addEventListener('click', () => {
+    gridContainer.innerHTML = '';
+    setupGrid(scale.value)
+})
 
 scale.onchange = function() {
     const size = this.value;

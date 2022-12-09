@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,18 +15,27 @@
         width: 500px;
         border: 2px solid black;
     }
-    
+
     .grid-element {
         user-select: none;
         /* border: 1px solid black; */
     }
+
+    .scale-container {
+        display: flex;
+    }
 </style>
+
 <body>
-    <div>
+    <div class="scale-container">
         <label for="scale">Scale</label>
-        <input type="range" id="scale" name="scale"
-               min="10" max="50" step="2" value="16">
+        <input type="range" id="scale" name="scale" min="10" max="50" step="2" value="16">
+        <div>
+            <button class="clear-btn">Clear</button>
+        </div>
     </div>
+
     <div class="grid-container"></div>
 </body>
+
 </html>
